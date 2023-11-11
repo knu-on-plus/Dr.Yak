@@ -1,23 +1,37 @@
 # [2023 대구를 빛내는 SW 해커톤] 
 
-![Header](http://capsule-render.vercel.app/api?type=rect&color=auto&height=200&section=header&text=Team%20Dr.%20Yak&fontSize=80&fontAlignY=&animation=twinkling)
+<details>
+<summary>보고서 양식</summary>
+<div markdown="1">       
 
 - 팀명
+  
   - 약박사님을 아세요?
 
 - 제출 타입 및 주제
+  
   - S타입
 
 - 프로젝트 한 줄 설명
-  - 디지털 활용 능력이 떨어지는 노년층을 대상으로 약의 종류 및 복용 방법에 대한 정보를 쉽게 이해하도록 도와주는 어시스턴트
+  
+  - AI기반의 노년층 대상 약 종류 및 복용 방법 정보 제공 어시스턴트
 
 - 프로젝트에 활용된 기술
+  
   - PaddleOCR 인공지능 모델 활용 / TTS / 
 
 - 시연 영상
+  
   - URL
     
 
+</div>
+</details>
+
+
+
+
+![Header](http://capsule-render.vercel.app/api?type=rect&color=auto&height=200&section=header&text=Team%20Dr.%20Yak&fontSize=80&fontAlignY=&animation=twinkling)
 
 
 ## 1. 주제
