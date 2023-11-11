@@ -1,6 +1,6 @@
 # [2023 대구를 빛내는 SW 해커톤] 
 
-![Header](http://capsule-render.vercel.app/api?type=rect&color=#05FAC8&height=200&section=header&text=Team%20Dr.%20Yak&fontSize=80&fontAlignY=&animation=twinkling)
+![Header](http://capsule-render.vercel.app/api?type=rect&color=default(#05FAC8)&height=200&section=header&text=Team%20Dr.%20Yak&fontSize=80&fontAlignY=&animation=twinkling)
 
 <details>
 <summary>보고서 양식</summary>
