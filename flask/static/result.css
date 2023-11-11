@@ -1,0 +1,86 @@
+.iphone-box {
+    margin-top: 3%;
+    width: 375px; /* iPhone X width */
+    height: 812px; /*iPhone X height 812  */
+    background-color: #f0f0f0; /* 예시 색상 */
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+
+    color: #000; /* 텍스트 색상 */
+    font-size: 30px; /* 폰트 사이즈 */
+    /* text-align: center; 텍스트 중앙 정렬 */
+    line-height: 35px; 
+  }
+
+  div.iphone-box > h3{
+        margin-left: 3%;
+  }
+
+  .custom-img{
+      position: absolute; /* Position the image relative to its parent */
+      top: 50%;
+      left: 70%;
+      transform: translate(-50%, -50%);
+      width: 200px; /* Example: set the image width */
+      height: 300px; /* Maintain aspect ratio */
+      border-radius: 7px;
+  }
+
+  .desc{
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 370px;
+      height : 100px;
+      text-align: center;
+  }
+
+
+ .pill_name{
+      position: absolute; 
+      top: 35%;
+      left: 7%;
+      /* transform: translate(-50%, -50%); */
+      width: 150px; /* Example: set the image width */
+      height: 200px; /* Maintain aspect ratio */
+      /* border : solid; */
+      font-size: 30px
+ }
+
+ .pill_name > h3{
+      margin-bottom: -10%;
+      font-size: 40px;
+ }
+
+.detail_name{
+     position: absolute; 
+     /* border : solid; */
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     font-size: 20px;
+
+}
+
+ .tts_box{
+      position: absolute;
+      /* border: solid; */
+      width : 100px;
+      height : 100px;
+      top: 68%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+ }
+
+ .result_name{
+     font-size: 25px;
+ }
+
+
+ 
+   
+  
