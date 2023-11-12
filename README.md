@@ -1,9 +1,13 @@
+<p>
+  <a align="center" href="https://github.com/sourcreamonion/Dr.Yak" target="_blank">
+    <img width="100%" src="https://raw.githubusercontent.com/sourcreamonion/Dr.Yak/main/Images/figure5.png"></a>
+</p>
+</br>
+
 # [2023 대구를 빛내는 SW 해커톤] 
 
-![Header](http://capsule-render.vercel.app/api?type=rect&color=auto&height=200&section=header&text=Team%20Dr.%20Yak&fontSize=80&fontAlignY=&animation=twinkling)
-
 - 팀명
-  
+
   - 약박사님을 아세요?
 
 - 제출 타입 및 주제
@@ -23,27 +27,12 @@
   
   - URL
     
-
-</div>
-</details>
+    {% include video.html id="nV2U9PTMvBE" %}
 
 
 <br/>
 <br/>
 <br/>
-
-## How to use
-- 환경 설정
-```
-git clone https://github.com/sourcreamonion/Dr.Yak.git
-cd Dr.Yak
-conda env update --name [envname] --file environment.yaml
-```
-
-<br/>
-<br/>
-<br/>
-
 
 
 ## 1. 주제
@@ -56,9 +45,9 @@ conda env update --name [envname] --file environment.yaml
 ## 2. 핵심 내용
 - __핵심 내용__
 
-    - _**노년층**이 **약의 종류와 복용 방법** 등에 대한 정보를 쉽게 이해하고 접근할_ 수 있도록 도와줌
+    - **노년층**이 **약의 종류와 복용 방법** 등에 대한 정보를 쉽게 이해하고 접근할 수 있도록 도와줌
 
-    - __OCR(Optical Character Recognition)__ 모델과 __TTS(Text-To-Speak)__ 를 활용해 사용자는 약의 사진을 _카메라로 찍어 입력하고_, 해당 약에 대한 이름과 복용 방법에 대한 상세 정보를 획득 할 수 있음
+    - __OCR(Optical Character Recognition)__ 모델과 __TTS(Text-To-Speak)__ 를 활용해 사용자는 약의 사진을 카메라로 찍어 입력하고, 해당 약에 대한 이름과 복용 방법에 대한 상세 정보를 획득 할 수 있음
 
 
     - 기술 스택
@@ -79,16 +68,23 @@ conda env update --name [envname] --file environment.yaml
 
     ### __Process__
 
-1. 촬영된 사진을 OCR 인공지능 기술을 통해 뒷면의 모든 텍스트 인식
+1. 약포장지의 뒷면 촬영
 
-2. 인식된 텍스트 뭉치에서 Google Bard 자연어처리 모델을 이용해 약제 이름 추출
+2. OCR(Optical Character Recognition) 인공지능 모델 활용
 
-3. 약제 정보 데이터베이스에서 추출된 텍스트와 유사도가 높은 약제 검색
+    2-1. OCR 텍스트 인식 모델을 통해 약포장지 뒷면의 주요 텍스트 인식 후 문자 추출
 
-4. 데이터베이스에 있는 약의 이름, 복용 방법, 주의 사항을 TTS 기술을 통해 음성으로 안내
+    2-2. MultinomialNB 텍스트 분류 머신러닝 모델을 활용해 OCR 모델로 추출한 문자를 특정 약 범주로 텍스트 분류
 
-5. 수집된 이미지로 구축한 데이터셋을 통해 알약에 대한 분류기(Deep Learning based - Classification model) 학습
-6. 사용자의 이용률 증가로 데이터 수집량이 늘어나고, 이에 따른 모델 정확도 상승 및 약의 범주가 확장됨 
+3.  검증 및 앙상블(Ensemble)을 위한 YOLO Classification 모델 활용 
+
+    3-1. 약포장지 이미지 데이터로 학습된 YOLO Classification 모델을 통해 사용자 입력된 약 이미지 분류
+
+    3-2 텍스트 분류 결과와 이미지 분류 결과에 대한 Weighted soft voting 적용(텍스트 결과 가중치 (0.7), 이미지 결과 (0.3)) 으로 최종 약 결과 분류
+
+4.  앙상블로 최종 분류된 약의 정보(이름, 복용 방법, 주의 사항)를 TTS (Text-To-Speech)를 통해 음성으로 안내
+
+
 <br/>
 <br/>
 <br/>
@@ -137,7 +133,6 @@ conda env update --name [envname] --file environment.yaml
     - 정부 기관과의 연계
 
         - 사회 복지 서비스에 관한 기술로 활용 가능
-    
 
 ***
 
@@ -165,8 +160,14 @@ conda env update --name [envname] --file environment.yaml
 
         - 노년층과 저시력자의 생활 품질 향상을 통한 사회적 책임 수행
 
+***
 
-이런 방식으로 구축된 앱은 _**노년층의 의약품 복용 안전성과 편의성을 향상**_ 하는 동시에 다양한 사업 모델을 통해 _**경제적 이익**도 추구_ 할 수 있을 것임
+- 기대 효과
+
+    - 사용자의 이용률 증가로 데이터 수집량이 늘어나고, 이에 따른 모델 정확도 상승 및 약의 범주가 확장됨
+<br/>
+ 
+이런 방식으로 구축된 앱은 **노년층의 의약품 복용 안전성과 편의성을 향상** 하는 동시에 다양한 사업 모델을 통해 **경제적 이익**도 추구 할 수 있을 것임
 <br/>
 <br/>
 <br/>
@@ -177,3 +178,5 @@ conda env update --name [envname] --file environment.yaml
 <div align="center"><a href="https://github.com/sourcreamonion/Dr.YaK/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=sourcreamonion/Dr.YaK" />
 </a></div>
+
+![Header](http://capsule-render.vercel.app/api?type=rect&color=auto&height=200&section=header&text=Team%20Dr.%20Yak&fontSize=80&fontAlignY=&animation=twinkling)
