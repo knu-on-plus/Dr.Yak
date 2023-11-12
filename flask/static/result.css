@@ -71,7 +71,7 @@
       /* border: solid; */
       width : 100px;
       height : 100px;
-      top: 68%;
+      top: 64%;
       left: 50%;
       transform: translate(-50%, -50%);
  }
@@ -81,6 +81,29 @@
  }
 
 
- 
+ #audioPlayer{
+     display: none;
+ }
    
-  
+
+ .return_home{
+  margin-top: 3%;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: red;
+  border: none;
+  border-radius: 10px; /* Adjust the value to increase or decrease the roundness */
+  color: white;
+  padding: 10px 20px; /* Adjust padding for desired button size */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 15px;
+  cursor: pointer;
+ }
+
+

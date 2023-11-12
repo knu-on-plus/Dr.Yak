@@ -5,6 +5,13 @@ import tempfile
 import os
 import torch
 import time
+import TTS
+from ultralytics import YOLO
+
+dic = {0: ['레피콜', '감기약', '1일 3회 식후 30분에 2캡슐씩 복용 가능합니다.'], 
+       1: ['타이레놀', '진통제', '1회 1~2정씩 1일 3~4회 필요시 복용합니다. 1일 최대 8정 복용 가능합니다.'],
+       2: ['제로민', '수면제', '1일 1회 취침 전 복용합니다.']
+        }
 
 app = Flask(__name__)
 
@@ -18,17 +25,27 @@ def form():
 
 @app.route('/upload', methods=['POST'])
 def upload():
+
+    ##이미지, 오디오 초기화
+    # if os.path.exists('static/uploads/uploaded_image.png'):
+    #     os.remove('static/uploads/uploaded_image.png')
+    # if os.path.exists('static/temp_description.mp3'):
+    #     os.remove('static/temp_description.mp3')
+    #     print("audio deleted")
+
     uploaded_file = request.files['image']
     print(uploaded_file)
     uploaded_file.save('static/uploads/uploaded_image.png')
-    
-    # appear loading div
-    #  model's result will set heres
-    time.sleep(5) # let's say this is the model's inference
-    # disappear loading div
-    result_name, result_type  = "타이레놀", "각성제"
-    # return redirect(url_for('result', result_name = result_name, result_type = result_type))
-    return render_template("result.html", result_name = result_name, result_type = result_type)
+    model = YOLO("yolo_clf.pt")
+    results = model('static/uploads/uploaded_image.png') 
+    result_name = dic[results[0].probs.top1][0]
+    result_type = dic[results[0].probs.top1][1]
+    result_desc = f"{result_type}, {result_name}의 복용방법과 주의사항을 알려드릴게요." +"   "+ dic[results[0].probs.top1][2]
+    print(result_name)
+    print(result_type)
+    print(result_desc)
+    filename = TTS.save_tts(result_desc)
+    return render_template("result.html", result_name = result_name, result_type = result_type, filename = filename)
 
 
 # @app.route('/result', methods = ['GET', 'POST'])
@@ -38,7 +55,16 @@ def upload():
 #     print(result_type, result_name)
 #     return render_template("result.html", result_name = result_name, result_type = result_type)
     
-
+@app.route('/goback', methods=['GET'])
+def go_back():
+    ##이미지, 오디오 초기화
+    if os.path.exists('static/uploads/uploaded_image.png'):
+        os.remove('static/uploads/uploaded_image.png')
+        print("img deleted")
+    if os.path.exists('static/temp_description.mp3'):
+        os.remove('static/temp_description.mp3')
+        print("audio deleted")
+    return redirect(url_for('form'))
 
 
 if __name__ == '__main__':
