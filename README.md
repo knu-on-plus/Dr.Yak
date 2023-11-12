@@ -88,7 +88,7 @@ conda env update --name [envname] --file environment.yaml
 4. 데이터베이스에 있는 약의 이름, 복용 방법, 주의 사항을 TTS 기술을 통해 음성으로 안내
 
 5. 수집된 이미지로 구축한 데이터셋을 통해 알약에 대한 분류기(Deep Learning based - Classification model) 학습
-6. 사용자의 이용률 증가로 데이터 수집량이 늘어나고, 이에 따른 모델 정확도 상승 및 약의 범주가 확장됨
+6. 사용자의 이용률 증가로 데이터 수집량이 늘어나고, 이에 따른 모델 정확도 상승 및 약의 범주가 확장됨 
 <br/>
 <br/>
 <br/>
@@ -174,7 +174,6 @@ conda env update --name [envname] --file environment.yaml
 <div align="center"> We love your input!</div>
 <br/>
 <br/>
-<div align="center"><a href="https://github.com/sourcreamonion/Dr.Yak/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=sourcreamonion/Dr.Yak" />
+<div align="center"><a href="https://github.com/sourcreamonion/Dr.YaK/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=sourcreamonion/Dr.YaK" />
 </a></div>
-
