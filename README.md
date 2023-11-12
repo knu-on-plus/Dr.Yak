@@ -26,8 +26,9 @@
 - 시연 영상
   
   - URL
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/nV2U9PTMvBE?si=-Pxj2g8pGb02iRED" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    <!-- {% include video.html id="nV2U9PTMvBE" %} -->
+    
+    {% include video.html id="nV2U9PTMvBE" %}
+
 
 <br/>
 <br/>
