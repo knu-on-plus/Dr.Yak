@@ -29,7 +29,7 @@
 ```
 git clone https://github.com/sourcreamonion/Dr.Yak.git
 cd Dr.Yak
-conda env update --name envname --file environment.yml
+conda env update --name [envname] --file environment.yaml
 ```
 
 <br/>
