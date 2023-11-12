@@ -9,7 +9,7 @@ from joblib import dump, load
 
 okt = Okt()
 clf = load('ocr_clf.joblib')
-
+vectorizer = load('vectorizer.joblib')
 
 def predict_emotion(model, input_text):
     # 입력 텍스트 형태소 분석 및 토큰화
@@ -35,4 +35,4 @@ if __name__ == "__main__":
     input_string = "불면증의 엄시적 일시적 새르자 제로민의 어린이"
     predicted_emotion = predict_emotion(clf, input_string)
     print(f'입력 텍스트: {input_string}')
-    print(f'예측된 감정 클래스: {label_mapping[predicted_emotion]}')
+    print(f'예측된 감정 클래스: {database.[predicted_emotion]}')
