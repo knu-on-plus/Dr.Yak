@@ -2,28 +2,18 @@
 
 ![Header](http://capsule-render.vercel.app/api?type=rect&color=auto&height=200&section=header&text=Team%20Dr.%20Yak&fontSize=80&fontAlignY=&animation=twinkling)
 
-<details>
-<summary>보고서 양식</summary>
-<div markdown="1">       
-
 - 팀명
   
   - 약박사님을 아세요?
 
 - 제출 타입 및 주제
-<<<<<<< HEAD
   
-  - S타입
-
-- 프로젝트 한 줄 설명
-  
-  - AI기반의 노년층 대상 약 종류 및 복용 방법 정보 제공 어시스턴트
-=======
   - S타입, 디지털 활용 능력이 떨어지는 노년층을 대상으로 약의 종류 및 복용 방법에 대한 정보를 쉽게 이해하도록 도와주는 어시스턴트
 
 - 프로젝트 한 줄 설명
+  
   - 약 상자 껍데기 없이 약을 보관하여 약의 종류와 복용 방식을 알기 힘든 경우 인공지능을 활용해 이미지와 이미지 내 텍스트를 분석해 어떤 약인지를 알려주는 서비스 
->>>>>>> 8234ee2c90fbb8815d73c8618438dfcc79cb4e8f
+
 
 - 프로젝트에 활용된 기술
   
