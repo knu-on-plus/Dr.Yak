@@ -38,7 +38,7 @@ def upload():
     sentimental_result = sentimental(ocr_result)
     
     # OCR 모델에 대한 sentimental 모델 결과와 약 이미지 분류기 앙상블 (voting) 결과 idx 
-    idx = ensemble(sentimental_result, classification_result)
+    idx = ensemble.soft_voting(sentimental_result, classification_result)
     
     # Text To Speech 음성 파일 실행
     #tts_filename = TTS.save_tts(idx)

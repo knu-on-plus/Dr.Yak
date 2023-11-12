@@ -3,3 +3,4 @@ Data/
 preprocessing/test_data/
 flask/__pycache__/
 *.csv
+__pycache__/
