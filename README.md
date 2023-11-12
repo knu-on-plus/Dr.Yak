@@ -26,8 +26,10 @@
 - 시연 영상
   
   - URL
-    
-    <a href="./Images/figure4.png"><img src="https://www.youtube.com/watch?v=nV2U9PTMvBE"></a>
+<!--     
+    <a href="./Images/figure4.png"><img src="https://www.youtube.com/watch?v=nV2U9PTMvBE"></a> -->
+
+[![video](https://www.youtube.com/watch?v=nV2U9PTMvBE)](https://www.youtube.com/watch?v=nV2U9PTMvBE?t=0s) 
 
 
 <br/>
