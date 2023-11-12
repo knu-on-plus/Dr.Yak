@@ -4,4 +4,4 @@ def result(idx):
     1: ['타이레놀', '진통제', '1회 1~2정씩 1일 3~4회 필요시 복용합니다. 1일 최대 8정 복용 가능합니다.'],
     2: ['제로민', '수면제', '1일 1회 취침 전 복용합니다.']
         }
-    return dic[idx][0], dic[idx][1]
+    return dic[idx][0], dic[idx][1] # result_name, result_type

@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template, url_for, redirect
 import os, uuid
-import preprocessing, postprocessing, sentimental, ocr, yolo_classifier, database, ensemble
+import preprocessing, sentimental, ocr, yolo_classifier, database, ensemble #postprocessing,
 #import TTS
 
 
@@ -33,9 +33,8 @@ def upload():
 
     # 약 이미지 분류기
     classification_result =yolo_classifier.classifier(img_path)
-
     # OCR 모델에 대한 sentimental 모델 결과
-    sentimental_result = sentimental(ocr_result)
+    sentimental_result = sentimental.sentimental(ocr_result)
     
     # OCR 모델에 대한 sentimental 모델 결과와 약 이미지 분류기 앙상블 (voting) 결과 idx 
     idx = ensemble(sentimental_result, classification_result)
