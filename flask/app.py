@@ -1,10 +1,9 @@
-from flask import Flask, request, render_template, send_from_directory, url_for, redirect
-# chatGPT 라이브러리가 실제로 존재하지 않으므로 대체되었습니다. 적절한 라이브러리를 사용해주세요.
-# import chatGPT
-import tempfile
-import os
-import torch
-import time
+from flask import Flask, request, render_template, url_for, redirect
+import os, uuid
+import preprocessing, postprocessing, sentimental, ocr, yolo_classifier, database, ensemble
+#import TTS
+
+
 
 app = Flask(__name__)
 
@@ -18,27 +17,47 @@ def form():
 
 @app.route('/upload', methods=['POST'])
 def upload():
+    uploaded_uuid = str(uuid.uuid4())
+    uploaded_file_path = f'static/uploads/{uploaded_uuid}.png'
+    
+    # 업로드 파일 저장
     uploaded_file = request.files['image']
-    print(uploaded_file)
-    uploaded_file.save('static/uploads/uploaded_image.png')
+    uploaded_file.save(uploaded_file_path)
+
+    # 이미지 전처리
+    preprocessed_path =  f'static/preprocessed_img'
+    img_path = preprocessing.transform_img(uploaded_file_path, preprocessed_path, uploaded_uuid)
     
-    # appear loading div
-    #  model's result will set heres
-    time.sleep(5) # let's say this is the model's inference
-    # disappear loading div
-    result_name, result_type  = "타이레놀", "각성제"
-    # return redirect(url_for('result', result_name = result_name, result_type = result_type))
-    return render_template("result.html", result_name = result_name, result_type = result_type)
+    # OCR 모델 결과
+    ocr_result = ocr.paddle_ocr(img_path)
 
+    # 약 이미지 분류기
+    classification_result =yolo_classifier.classifier(img_path)
 
-# @app.route('/result', methods = ['GET', 'POST'])
-# def result():
-#     result_name = request.args.get('result_name')
-#     result_type = request.args.get('result_type')
-#     print(result_type, result_name)
-#     return render_template("result.html", result_name = result_name, result_type = result_type)
+    # OCR 모델에 대한 sentimental 모델 결과
+    sentimental_result = sentimental(ocr_result)
     
+    # OCR 모델에 대한 sentimental 모델 결과와 약 이미지 분류기 앙상블 (voting) 결과 idx 
+    idx = ensemble(sentimental_result, classification_result)
+    
+    # Text To Speech 음성 파일 실행
+    #tts_filename = TTS.save_tts(idx)
 
+    # Database에서 해당 약에 대한 정보 불러오기
+    result_name, result_type = database.result(idx)
+
+    return render_template("result.html", result_name = result_name, result_type = result_type, filename = tts_filename)
+    
+@app.route('/goback', methods=['GET'])
+def go_back():
+    ##이미지, 오디오 초기화
+    if os.path.exists('static/uploads/uploaded_image.png'):
+        os.remove('static/uploads/uploaded_image.png')
+        print("img deleted")
+    if os.path.exists('static/temp_description.mp3'):
+        os.remove('static/temp_description.mp3')
+        print("audio deleted")
+    return redirect(url_for('form'))
 
 
 if __name__ == '__main__':
