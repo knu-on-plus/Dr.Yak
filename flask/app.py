@@ -1,7 +1,7 @@
 from flask import Flask, request, render_template, url_for, redirect
 import os, uuid
 import preprocessing, sentimental, ocr, yolo_classifier, database, ensemble #postprocessing,
-#import TTS
+import TTS
 
 
 
@@ -33,19 +33,21 @@ def upload():
 
     # 약 이미지 분류기
     classification_result =yolo_classifier.classifier(img_path)
+    print("classification_result : ", classification_result)
     # OCR 모델에 대한 sentimental 모델 결과
     sentimental_result = sentimental.sentimental(ocr_result)
     
     # OCR 모델에 대한 sentimental 모델 결과와 약 이미지 분류기 앙상블 (voting) 결과 idx 
     idx = ensemble.soft_voting(sentimental_result, classification_result)
-    
-    # Text To Speech 음성 파일 실행
-    #tts_filename = TTS.save_tts(idx)
+    # idx = int(max(classification_result[0])) #yolo만
 
     # Database에서 해당 약에 대한 정보 불러오기
     result_name, result_type = database.result(idx)
 
-    return render_template("result.html", result_name = result_name, result_type = result_type, filename = tts_filename)
+    #오디오파일 생성 및 저장
+    text = TTS.make_text(idx, result_type, result_name)
+    filename = TTS.save_tts(text)
+    return render_template("result.html", result_name = result_name, result_type = result_type, filename = f"uploads/{uploaded_uuid}.png")
     
 @app.route('/goback', methods=['GET'])
 def go_back():
@@ -62,5 +64,5 @@ def go_back():
 if __name__ == '__main__':
     if not os.path.exists(app.config['UPLOAD_FOLDER']):
         os.makedirs(app.config['UPLOAD_FOLDER'])
-    # app.run(debug=True, host='172.16.2.75', port=5000)
-    app.run(debug = True, port = 5004, threaded=True)
+    app.run(debug=True, host='172.20.10.3', port=5000)
+    # app.run(debug = True, port = 5004, threaded=True)
