@@ -3,21 +3,29 @@
 ![Header](http://capsule-render.vercel.app/api?type=rect&color=auto&height=200&section=header&text=Team%20Dr.%20Yak&fontSize=80&fontAlignY=&animation=twinkling)
 
 - 팀명
+  
   - 약박사님을 아세요?
 
 - 제출 타입 및 주제
+  
   - S타입, 디지털 활용 능력이 떨어지는 노년층을 대상으로 약의 종류 및 복용 방법에 대한 정보를 쉽게 이해하도록 도와주는 어시스턴트
 
 - 프로젝트 한 줄 설명
+  
   - 약 상자 껍데기 없이 약을 보관하여 약의 종류와 복용 방식을 알기 힘든 경우 인공지능을 활용해 이미지와 이미지 내 텍스트를 분석해 어떤 약인지를 알려주는 서비스 
 
+
 - 프로젝트에 활용된 기술
+  
   - PaddleOCR 인공지능 모델 활용 / TTS / 
 
 - 시연 영상
+  
   - URL
     
 
+</div>
+</details>
 
 
 <br/>
@@ -80,6 +88,7 @@ conda env update --name [envname] --file environment.yaml
 4. 데이터베이스에 있는 약의 이름, 복용 방법, 주의 사항을 TTS 기술을 통해 음성으로 안내
 
 5. 수집된 이미지로 구축한 데이터셋을 통해 알약에 대한 분류기(Deep Learning based - Classification model) 학습
+6. 사용자의 이용률 증가로 데이터 수집량이 늘어나고, 이에 따른 모델 정확도 상승 및 약의 범주가 확장됨 
 <br/>
 <br/>
 <br/>
@@ -156,14 +165,15 @@ conda env update --name [envname] --file environment.yaml
 
         - 노년층과 저시력자의 생활 품질 향상을 통한 사회적 책임 수행
 
+
 이런 방식으로 구축된 앱은 _**노년층의 의약품 복용 안전성과 편의성을 향상**_ 하는 동시에 다양한 사업 모델을 통해 _**경제적 이익**도 추구_ 할 수 있을 것임
 <br/>
 <br/>
 <br/>
 ## 5. Contribute
 <div align="center"> We love your input!</div>
-
-
-<div align="center"><a href="https://github.com/aicoss-wim-team/Dr.-Hong/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=aicoss-wim-team/Dr.-Hong" />
+<br/>
+<br/>
+<div align="center"><a href="https://github.com/sourcreamonion/Dr.YaK/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=sourcreamonion/Dr.YaK" />
 </a></div>
