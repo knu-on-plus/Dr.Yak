@@ -27,7 +27,7 @@
   
   - URL
     
-    {% include video.html id="nV2U9PTMvBE" %}
+    <a href="https://www.youtube.com/watch?v=nV2U9PTMvBE"><img src="https://www.youtube.com/watch?v=nV2U9PTMvBE"></a>
 
 
 <br/>
@@ -173,10 +173,14 @@
 <br/>
 ## 5. Contribute
 <div align="center"> We love your input!</div>
+
 <br/>
 <br/>
 <div align="center"><a href="https://github.com/sourcreamonion/Dr.YaK/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=sourcreamonion/Dr.YaK" />
 </a></div>
+
+<br/>
+<br/>
 
 ![Header](http://capsule-render.vercel.app/api?type=rect&color=auto&height=200&section=header&text=Team%20Dr.%20Yak&fontSize=80&fontAlignY=&animation=twinkling)
