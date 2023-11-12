@@ -6,18 +6,18 @@ import TTS
 
 
 app = Flask(__name__)
-
+# config 설정
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 app.config['UPLOAD_FOLDER'] = os.path.join(BASE_DIR, 'static', 'uploads')
 
 
 @app.route('/', methods=['GET', "POST"])
 def form():
-    return render_template('index.html')
+    return render_template('index.html') # 메인 화면
 
 @app.route('/upload', methods=['POST'])
 def upload():
-    uploaded_uuid = str(uuid.uuid4())
+    uploaded_uuid = str(uuid.uuid4()) 
     uploaded_file_path = f'static/uploads/{uploaded_uuid}.png'
     
     # 업로드 파일 저장
@@ -33,13 +33,11 @@ def upload():
 
     # 약 이미지 분류기
     classification_result =yolo_classifier.classifier(img_path)
-    print("classification_result : ", classification_result)
     # OCR 모델에 대한 sentimental 모델 결과
     sentimental_result = sentimental.sentimental(ocr_result)
     
     # OCR 모델에 대한 sentimental 모델 결과와 약 이미지 분류기 앙상블 (voting) 결과 idx 
     idx = ensemble.soft_voting(sentimental_result, classification_result)
-    # idx = int(max(classification_result[0])) #yolo만
 
     # Database에서 해당 약에 대한 정보 불러오기
     result_name, result_type = database.result(idx)
@@ -51,7 +49,7 @@ def upload():
     
 @app.route('/goback', methods=['GET'])
 def go_back():
-    ##이미지, 오디오 초기화
+    #이미지, 오디오 초기화
     if os.path.exists('static/uploads/uploaded_image.png'):
         os.remove('static/uploads/uploaded_image.png')
         print("img deleted")
@@ -64,5 +62,5 @@ def go_back():
 if __name__ == '__main__':
     if not os.path.exists(app.config['UPLOAD_FOLDER']):
         os.makedirs(app.config['UPLOAD_FOLDER'])
-    app.run(debug=True, host='172.20.10.3', port=5000)
+    app.run(debug=True, host='172.20.10.3', port=5000) # host에 본인 ip 주소 입력하세요!
     # app.run(debug = True, port = 5004, threaded=True)
