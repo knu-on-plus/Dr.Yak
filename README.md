@@ -1,8 +1,4 @@
-<p>
-  <a align="center" href="https://github.com/sourcreamonion/Dr.Yak" target="_blank">
-    <img width="100%" src="https://raw.githubusercontent.com/sourcreamonion/Dr.Yak/main/Images/figure5.png"></a>
-</p>
-</br>
+<a href="./asset/figure5.png"><img src="./asset/figure5.png"></a>
 
 # [2023 대구를 빛내는 SW 해커톤] 
 
@@ -24,18 +20,20 @@
   - PaddleOCR 인공지능 모델 활용 / TTS / 
 
 - 시연 영상
-  
-  - URL
-<!--     
-    <a href="./Images/figure4.png"><img src="https://www.youtube.com/watch?v=nV2U9PTMvBE"></a> -->
 
-[![video](./Images/figure5.png)](https://www.youtube.com/watch?v=nV2U9PTMvBE?t=0s) 
-
+    [![video](./asset/figure5.png)](https://www.youtube.com/watch?v=nV2U9PTMvBE?t=0s) 
 
 <br/>
-<br/>
-<br/>
 
+## Quick Start
+- 환경 설정 (GPU 사용권장)
+```
+git clone https://github.com/sourcreamonion/Dr.Yak.git
+cd Dr.Yak
+conda env create -f env.yml
+pip install -r requirements.txt
+```
+<br/>
 
 ## 1. 주제
 - __약박사 (Dr. YAk)__
@@ -58,7 +56,7 @@
 
     #### 예상 UI Prototype
 
-    <a href="./Images/figure1.png"><img src="./Images/figure1.png"></a>
+    <a href="./asset/figure1.png"><img src="./asset/figure1.png"></a>
 
 ***
 
@@ -66,7 +64,7 @@
 
     ### __Framework__
 
-    <a href="./Images/figure1.png"><img src="./Images/figure2.png"></a>
+    <a href="./asset/figure2.png"><img src="./asset/figure2.png"></a>
 
     ### __Process__
 
@@ -116,7 +114,7 @@
 
 
         #### 보관 방식의 예시
-        <a href="./Images/figure3.png"><img src="./Images/figure3.png"></a>  
+        <a href="./asset/figure3.png"><img src="./asset/figure3.png"></a>  
 <br/>
 <br/>
 <br/>
