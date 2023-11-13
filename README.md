@@ -17,7 +17,9 @@
 
 - 프로젝트에 활용된 기술
   
-  - PaddleOCR 인공지능 모델 활용 / TTS / 
+  - 딥러닝 기반의 인공지능 모델 및 알고리즘
+    
+  - Text recognition: PaddleOCR / Text analysis: MultinomialNB algorithm / Image classification: YOLO
 
 - 시연 영상
 
@@ -74,7 +76,7 @@ pip install -r requirements.txt
 
     2-1. OCR 텍스트 인식 모델을 통해 약포장지 뒷면의 주요 텍스트 인식 후 문자 추출
 
-    2-2. MultinomialNB 텍스트 분류 머신러닝 모델을 활용해 OCR 모델로 추출한 문자를 특정 약 범주로 텍스트 분류
+    2-2. MultinomialNB 텍스트 분석 머신러닝 모델을 활용해 OCR 모델로 추출한 문자를 특정 약 범주로 텍스트 분석
 
 3.  검증 및 앙상블(Ensemble)을 위한 YOLO Classification 모델 활용 
 
