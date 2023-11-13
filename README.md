@@ -39,6 +39,7 @@ pip install -r requirements.txt
 
 ## 1. 주제
 - __약박사 (Dr. YAk)__
+  
     - AI 기반 노년층 대상 Drug Assistant
 <br/>
 <br/>
@@ -78,13 +79,13 @@ pip install -r requirements.txt
 
     2-2. MultinomialNB 텍스트 분석 머신러닝 모델을 활용해 OCR 모델로 추출한 문자를 특정 약 범주로 텍스트 분석
 
-3.  검증 및 앙상블(Ensemble)을 위한 YOLO Classification 모델 활용 
+3.  검증 및 앙상블(Ensemble)을 위한 YOLO classification 모델 활용 
 
-    3-1. 약포장지 이미지 데이터로 학습된 YOLO Classification 모델을 통해 사용자 입력된 약 이미지 분류
+    3-1. 약포장지 이미지 데이터로 학습된 YOLO classification 모델을 통해 사용자 입력된 약 이미지 분류
 
-    3-2 텍스트 분류 결과와 이미지 분류 결과에 대한 Weighted soft voting 적용(텍스트 결과 가중치 (0.7), 이미지 결과 (0.3)) 으로 최종 약 결과 분류
+    3-2 텍스트 분류 결과와 이미지 분류 결과에 대해 앙상블 기법 중 하나인 weighted soft voting 적용(텍스트 결과 가중치 (0.7), 이미지 결과 (0.3))으로 최종 약 결과 분류
 
-4.  앙상블로 최종 분류된 약의 정보(이름, 복용 방법, 주의 사항)를 TTS (Text-To-Speech)를 통해 음성으로 안내
+4.  앙상블로 최종 분류된 약의 정보(이름, 복용 방법, 주의 사항)를 TTS(Text-To-Speech) 기술로 음성 안내
 
 
 <br/>
@@ -166,7 +167,8 @@ pip install -r requirements.txt
 
 - 기대 효과
 
-    - 사용자의 이용률 증가로 데이터 수집량이 늘어나고, 이에 따른 모델 정확도 상승 및 약의 범주가 확장됨
+    - 사용자의 이용 증가로 데이터 수집량이 확대됨에 따라 인공지능 모델의 추가 학습을 통해 모델 정확도 향상 및 약의 범주 확장 가능
+  
 <br/>
  
 이런 방식으로 구축된 앱은 **노년층의 의약품 복용 안전성과 편의성을 향상** 하는 동시에 다양한 사업 모델을 통해 **경제적 이익**도 추구 할 수 있을 것임
