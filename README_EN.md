@@ -1,34 +1,35 @@
 <a href="./asset/figure5.png"><img src="./asset/figure5.png"></a>
 
-# [2023 대구를 빛내는 SW 해커톤] 
+# [Shining Daegu SW Hackathon 2023] 
+<a href="./asset/figure7.png"><img src="./asset/figure7.png"></a>
 
-- 팀명
+- Team Name
 
-  - 약박사님을 아세요?
+  - Do you know Dr.Yak?
 
-- 제출 타입 및 주제
+- Submission type and topic
   
-  - S타입, 디지털 활용 능력이 떨어지는 노년층을 대상으로 약의 종류 및 복용 방법에 대한 정보를 쉽게 이해하도록 도와주는 어시스턴트
+  - S-type, An assistant that helps elder, less digitally literate people easily understand information about medication types and how to take them.
 
-- 프로젝트 한 줄 설명
+- One-line project description
   
-  - 약 상자 껍데기 없이 약을 보관하여 약의 종류와 복용 방식을 알기 힘든 경우 인공지능을 활용해 이미지와 이미지 내 텍스트를 분석해 어떤 약인지를 알려주는 서비스 
+  - A service that uses artificial intelligence to analyze images and text within the images to tell what type of medicine it is when it is difficult to understand the type of medicine and how to take it because the medicine is stored without a box.
 
 
-- 프로젝트에 활용된 기술
+- Technologies utilized in the project
   
-  - 딥러닝 기반의 인공지능 모델 및 알고리즘
+  - AI models and algorithms based on deep learning
     
   - Text recognition: PaddleOCR / Text analysis: MultinomialNB algorithm / Image classification: YOLO
 
-- 시연 영상
+- Demo ideo (Youtube link)
 
     [![video](./asset/figure6.png)](https://www.youtube.com/watch?v=nV2U9PTMvBE?t=0s) 
 
 <br/>
 
 ## Quick Start
-- 환경 설정 (GPU 사용권장)
+- Environment setting (GPU recommed for use)
 ```
 git clone https://github.com/sourcreamonion/Dr.Yak.git
 cd Dr.Yak
@@ -37,33 +38,33 @@ pip install -r requirements.txt
 ```
 <br/>
 
-## 1. 주제
-- __약박사 (Dr. YAk)__
+## 1. Subject
+- __Dr. YAk__
   
-    - AI 기반 노년층 대상 Drug Assistant
+    - AI-Based Drug Assistant for the Elderly
 <br/>
 <br/>
 <br/>
 
-## 2. 핵심 내용
-- __핵심 내용__
+## 2. Key Content
+- __Key Content__
 
-    - **노년층**이 **약의 종류와 복용 방법** 등에 대한 정보를 쉽게 이해하고 접근할 수 있도록 도와줌
+    - **Assisting elderly** in **easily understanding and accessing information** about **types of medication and their usage.**
 
-    - __OCR(Optical Character Recognition)__ 모델과 __TTS(Text-To-Speak)__ 를 활용해 사용자는 약의 사진을 카메라로 찍어 입력하고, 해당 약에 대한 이름과 복용 방법에 대한 상세 정보를 획득 할 수 있음
+    - Utilizing **OCR (Optical Character Recognition) and TTS (Text-To-Speak) models**, users can take a photo of the medication with their camera to obtain detailed information about the medication's name and usage.
 
 
-    - 기술 스택
+    - Technology Stack
 
         <a href="https://www.python.org/"><img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white"></a> <a href="https://www.w3schools.com/html/"><img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"></a> <a href="https://javascript.info/"><img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"></a> <a href="https://flask-docs-kr.readthedocs.io/ko/latest/quickstart.html"><img src="https://img.shields.io/badge/flask-000000?style=for-the-badge&logo=flask&logoColor=white"></a> <a href="https://www.w3schools.com/css/"><img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"></a>
 
-    #### 예상 UI Prototype
+    #### Expected UI Prototype
 
     <a href="./asset/figure1.png"><img src="./asset/figure1.png"></a>
 
 ***
 
-- __기술 구현 및 기능 프로세스 설명__
+- __Explanation of Technical Implementation and Functional Process__
 
     ### __Framework__
 
@@ -71,107 +72,107 @@ pip install -r requirements.txt
 
     ### __Process__
 
-1. 약포장지의 뒷면 촬영
+1. Get the back of a pill wrapper images using smartphone camera.
 
-2. OCR(Optical Character Recognition) 인공지능 모델 활용
+2. Utilize OCR (Optical Character Recognition) artificial intelligence model.
 
-    2-1. OCR 텍스트 인식 모델을 통해 약포장지 뒷면의 주요 텍스트 인식 후 문자 추출
+    2-1. Recognize the main text on the back of the pill wrapper through the OCR text recognition model and extract the characters.
 
-    2-2. MultinomialNB 텍스트 분석 머신러닝 모델을 활용해 OCR 모델로 추출한 문자를 특정 약 범주로 텍스트 분석
+    2-2. Analyze the text extracted by the OCR model into specific drug categories using the MultinomialNB text analysis machine learning model.
 
-3.  검증 및 앙상블(Ensemble)을 위한 YOLO classification 모델 활용 
+3.  Utilize YOLO classification model for validation and ensemble. 
 
-    3-1. 약포장지 이미지 데이터로 학습된 YOLO classification 모델을 통해 사용자 입력된 약 이미지 분류
+    3-1. Classify user-input medicine images through YOLO classification model trained on medicine package image data.
 
-    3-2 텍스트 분류 결과와 이미지 분류 결과에 대해 앙상블 기법 중 하나인 weighted soft voting 적용(텍스트 결과 가중치 (0.7), 이미지 결과 (0.3))으로 최종 약 결과 분류
+    3-2. Apply weighted soft voting, one of the ensemble techniques, on text classification results and image classification results (text results weighted (0.7), image results (0.3)) to classify final medicine results.
 
-4.  앙상블로 최종 분류된 약의 정보(이름, 복용 방법, 주의 사항)를 TTS(Text-To-Speech) 기술로 음성 안내
+4.  Voice announcement of the final ensemble classified medicine information (name, how to take, precautions) with text-to-speech (TTS) technology.
 
 
 <br/>
 <br/>
 <br/>
 
-## 3. 제안 배경
-1. **노령화 사회의 현실**
+## 3. Background
+1. **The reality of the aging society**
 
-    - 한국의 노령화: 2022년 기준 65세 이상 고령자 비율이 16% 이상
+    - Aging Korea: More than 16% of senior citizens aged 65 and over as of 2022.
 
-    - 전 세계적인 노령화 추세: 2050년까지 65세 이상 인구가 2배 이상 증가 예상
+    - Global Aging Trends: Over-65 Population Expected to More Than Double By 2050.
 
-2. **노년층의 의약품 복용률**
+2. **The rate of drug use among elder people**
 
-    - 노년층은 평균적으로 만성 질환 등으로 인해 여러 종류의 약을 먹는 경우가 많고, 이에 따라 약간의 혼동이나 잘못된 복용이 발생하기 쉬움
+    - Elder people, on average, often take various types of drugs due to chronic diseases, and are more likely to cause some confusion or misadministration.
 
-3. **노년층의 의약품 인식 문제점**
+3. **Problems with drug recognition among elder people**
 
-    - 의약품 포장의 작은 글씨로 인한 정보 인식 어려움
+    - Difficulty in recognizing information due to small letters on pharmaceutical packaging.
 
-    - 또한, 노년층은 디지털 정보에 접근하는 데 있어 장벽을 느낄 수 있어서 약에 대한 올바른 정보를 얻기 어려울 수 있음
+    - In addition, elder people may feel barriers in accessing digital information, making it difficult to obtain correct information about the drug.
 
-4. **알약 보관 방식**
+4. **How to store pills**
 
-    - 주로 알약을 보관할 때 약에 대한 상세 정보를 포함하는 상자를 제외하고 은박 알약 포장 형태의 상태로 보관함
+    -Mainly when storing pills, keep them in the form of silver foil pill packaging, except in boxes containing detailed information about the medicine.
 
-    - 해당 보관함에 담은 상태로 알약이 어떤 기능을 위한 것인지 헷갈리는 상황이 생김
+    - There is a situation where it is confusing what function the pill is for while in the storage box.
 
 
-        #### 보관 방식의 예시
+        #### Examples of medicine storage  
         <a href="./asset/figure3.png"><img src="./asset/figure3.png"></a>  
 <br/>
 <br/>
 <br/>
 
-## 4. 사업화 방안 및 기대 효과
-- 사업화 방안
+## 4. Commercialization options and expectations
+- How to Commercialize
 
-    - 병원/약국 파트너십
+    - Hospital/pharmacy partnership
 
-        - 협력 병원이나 약국과의 파트너십을 구축하여 앱을 홍보하고, 해당 기관에서 추천하는 약에 대한 정보 서비스를 제공함
+        - Build a partnership with a collaborating hospital or pharmacy to promote the app and provide information about medications recommended by their organization.
 
-    - 의약품 데이터베이스 구축 및 판매
+    - Build and sell drug database
 
-        - 의약품 포장재 사진 이미지를 확보하여 의약품 데이터베이스를 구축하여 의료, 의약계 수요자에게 판매
+        - Build a database of medicines by acquiring photos of drug packaging and selling them to medical and pharmaceutical customers.
 
-    - 정부 기관과의 연계
+    - Cooperation with government agencies
 
-        - 사회 복지 서비스에 관한 기술로 활용 가능
-
-***
-
-- 사회 파급(효과)
-
-    - 접근성 향상을 통한 노년층의 약 복용 안전성 향상
-
-        - 약에 대한 정확한 정보 제공을 통해 잘못된 복용이나 부작용 발생의 위험을 줄일 수 있음
-
-        - 디지털 장벽을 낮추는 직관적인 앱 디자인을 통해 노년층의 의약품 정보 접근성을 향상함
-
-    - 의료 서비스와의 연계
-
-        - 병원이나 약국과의 협력을 통해 사용자에게 추가적인 의료 서비스 정보 제공이 가능함
-
-    - 사용자 생활의 편리성 증대
-
-        - 의약품 복용 정보를 쉽게 확인하여 일상에서의 편의성 제공
-
-    - 시장점유율 확대 및 브랜드 가치 상승
-
-        - 타겟 시장을 노년층뿐만 아니라 저시력자 및 약에 대한 지식이 부족한 복용자까지 확장하여 사용자층 확대
-
-    - 사회적 가치 창출
-
-        - 노년층과 저시력자의 생활 품질 향상을 통한 사회적 책임 수행
+        - Utilize technology for social welfare services.
 
 ***
 
-- 기대 효과
+- Social Impact (Effect)
 
-    - 사용자의 이용 증가로 데이터 수집량이 확대됨에 따라 인공지능 모델의 추가 학습을 통해 모델 정확도 향상 및 약의 범주 확장 가능
+    - Improving medication safety for elder adults through improved accessibility
+
+        - Providing accurate information about medications can reduce the risk of taking them incorrectly or experiencing side effects.
+
+        - Improved access to medication information for elder adults through intuitive app design that reduces digital barriers.
+
+    - Connect with healthcare
+
+        - Collaborate with hospitals and pharmacies to provide additional healthcare information to users.
+
+    - Make life easier for users
+
+        - Provide convenience in daily life by making it easy to check information about taking medication.
+
+    - Expand market share and increase brand value
+
+        - Expanding the target market to include not only the elderly, but also people with low vision and those with limited knowledge of medication..
+
+    - Create social value
+
+        - Fulfill social responsibility by improving the quality of life of the elderly and low-vision people.
+
+***
+
+- What to expect
+
+    - As the amount of data collected expands due to increased user usage, the AI model can be further trained to improve model accuracy and expand the categories of medicines..
   
 <br/>
  
-이런 방식으로 구축된 앱은 **노년층의 의약품 복용 안전성과 편의성을 향상** 하는 동시에 다양한 사업 모델을 통해 **경제적 이익**도 추구 할 수 있을 것임
+Apps built in this way will be able to **improve the safety and convenience of taking medicines for the elderly** while **alsopursuing economic benefitsthrough various business models.**
 <br/>
 <br/>
 <br/>
