@@ -1,4 +1,8 @@
-| | |
+<div align="center">
+  
+|[English](./README.md)|[Korean](./README_KR.md)|
+|:---:|:---:|
+</div>
 <a href="./asset/figure5.png"><img src="./asset/figure5.png"></a>
 
 # [Shining Daegu SW Hackathon 2023] 
@@ -8,16 +12,16 @@
 
   - Do you know Dr.Yak?
 - Role:
-    - 다빈: Searching OCR model, record project log
-    - 채영:
+    - [**Dabin Kang**](https://github.com/Dabinishere): Searching OCR model, record project log
+    - [**Chae-yeong Song**](https://github.com/dudtheheaven) :
         
         Designed [README.md](http://readme.md/) file to summarize and explain our work.
         Defined Social impact and Expected outcomes through Dr.Yak.
         
-    - 민세:
+    - [**Minse Ha**](https://github.com/haminse) :
         - Proposed and implemented an ensemble classification framework for combining YOLOv8 in image classification and MultinomialNB in text analysis using soft voting.
         - Built frontend UI development with a focus on user experience using JavaScript and Flask
-    - 호준: Build flask server and OCR service framework with PaddleOCR
+    - [**Hojun Song**](https://github.com/hojunking) : Build flask server and OCR service framework with PaddleOCR
 - Submission type and topic
   
   - S-type, An assistant that helps elder, less digitally literate people easily understand information about medication types and how to take them.
