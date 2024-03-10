@@ -181,8 +181,8 @@ Apps built in this way will be able to **improve the safety and convenience of t
 
 <br/>
 <br/>
-<div align="center"><a href="https://github.com/sourcreamonion/Dr.YaK/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=sourcreamonion/Dr.YaK" />
+<div align="center"><a href="https://github.com/knu-on-plus/Dr.YaK/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=knu-on-plus/Dr.YaK" />
 </a></div>
 
 <br/>
