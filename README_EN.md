@@ -24,7 +24,7 @@
 
 - Demo ideo (Youtube link)
 
-    [![video](./asset/figure6.png)](https://www.youtube.com/watch?v=nV2U9PTMvBE?t=0s) 
+    [![video](./asset/figure6.png)]([https://www.youtube.com/watch?v=nV2U9PTMvBE?t=0s](https://youtu.be/LXg2eabtlDM)) 
 
 <br/>
 
