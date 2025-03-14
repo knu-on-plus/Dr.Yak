@@ -23,7 +23,7 @@
 
 - 시연 영상
 
-    [![video](./asset/figure6.png)](https://www.youtube.com/watch?v=nV2U9PTMvBE?t=0s) 
+    [![video](./asset/figure6.png)][(https://youtu.be/LXg2eabtlDM))]
 
 <br/>
 
